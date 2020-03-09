@@ -1,0 +1,35 @@
+Using the Google Cloud SDK installer
+-----------------------------------
+1.  curl https://sdk.cloud.google.com | bash
+2. Restart your shell
+    exec -l $SHELL
+3. Run gcloud init to initialize the gcloud environment:
+    gcloud init
+
+
+Create DataBase
+-----------
+1. Head to SQL
+2. Select Create Instance
+3. Configure respectively
+
+Serving static and media files
+----------------------
+1. Create a bucket at Storage - It's common, but not required, to name your bucket after your project ID. The bucket name must be globally unique.
+You can either create a bucket from `cloud.google.com` or from the gcloud CLI
+    i) Creating frm `cloud.google.com` is pretty straight forward.
+    ii) Creating from gcloud CLI:
+        $ gsutil mb gs://<your-bucket-name>
+2. Set the ACL to grant read access to items in the bucket
+    $ gsutil defacl set public-read gs://<your-bucket-name>
+3. Upload items to the bucket. 
+    $ gsutil -m rsync -r ./static gs://<your-bucket-name>/static
+
+You can now access your static assets via `https://storage.googleapis.com/<your-bucket-name>/static/...`
+
+Requirements(dependencies)
+-------------------------
+1. gunicorn 
+2. psycopg2
+3. google-cloud-storage
+4. django-storages

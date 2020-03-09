@@ -1,0 +1,13 @@
+runtime: python
+
+entrypoint: gunicorn -b :$PORT Technology.wsgi
+env: flex
+
+env_variables:
+  SECRET_KEY: '!_=5sj98gf*ycwn^xz#@o%rh9hkzr1sy3ojqoegi4#&c1cwym0'
+  DEBUG: 'False'
+
+  DB_HOST: '/cloud/machakos-tech-community:us-central1:tech-community'
+  DB_HOST: '5432'
+  D
+
