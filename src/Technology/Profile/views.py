@@ -21,3 +21,23 @@ def home_index(request):
     return render(request, 'profile/home.html')
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -31,3 +31,11 @@ urlpatterns = [
     path('posts/', posts_views.post_page, name='post_page'),
     
 ]
+
+
+
+
+
+
+
+
